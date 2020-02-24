@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+}
+#gameboard {
+  height: 100vh;
+ 
+}
+#player1 {
+  width: 250px;
+  display:inline;
+  float: left;
+  text-align: center;
+}
+#player2 {
+  width: 250px;
+  display:inline;
+  float: right;
+  text-align: center;
+}
+#vs img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  height: 30%;
+  width: 10%;
+}
+div.fenetre{
+
+  height: 20%;
+  width: 20%;
+  position: absolute;
+  left: 25%;
+  top: 25%;
+
+}
+.button{
+  height: 50%;
+  width: 60%;
+  color: black;
+  background: darkorange;
+  border: black solid 1px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.button1{
+
+  height: 50%;
+  width: 60%;
+  color: black;
+  background: darkorange;
+  border: black solid 1px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.consignes{
+  margin-top: 10%;
+  height: 320px;
+  border: solid 1px black;
+  width: 300px;
+  display:inline;
+  position: absolute;
+  left: 60%;
+}
+div.fight{
+
+  background: url('../img/fight.png');
+  background-repeat: no-repeat;
+  position: absolute;
+    height: 600px;
+    width: 600px;
+    top: 30%;
+    left: 30%;
+}
+div.decompte{
+
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  font-size: 50px;
+  height: 50px;
+  width: 50px;
+  color: orangered;
+}
+.buttonAgain{
+  height: 50px;
+  width: 150px;
+  position: absolute;
+  top: 70%;
+  left: 45%;
+  color: black;
+  background: darkorange;
+  border: black solid 1px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  cursor: pointer;
+}
+.feuille{
+
+  background: url("../img/feuille.png");
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 45%;
+  left: 70%;
+}
+.pierre{
+  background: url("../img/pierre.png");
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 45%;
+  left: 70%;
+
+
+}
+.ciseau{
+  background: url("../img/ciseau.png");
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 45%;
+  left: 70%;
+
+
+}
+.list{
+  display: inline-block;
+  position: absolute;
+  top: 20%;
+  list-style: none;
+  left: 20%;
+  font-size: 20px;
+  cursor: pointer;
+
+}
