@@ -14,7 +14,7 @@ let tabChoice = ["pierre", "feuille", "ciseau"];
 //console.log(tabChoice);
 //Au chargement de la page
 // crées des elements et afficher  mode solo ou deux joueur
-window.onload = function() {
+window.onload = function () {
   //cree la fenetre au chargement de la page
   let fenetre = document.createElement("div");
   fenetre.classList.add("fenetre");
@@ -44,22 +44,18 @@ window.onload = function() {
     let fight = document.createElement("div");
     fight.classList.add("fight");
     gameBoard.appendChild(fight);
-    setTimeout(function() {
+    setTimeout(function () {
       fight.remove("");
     }, 1000);
     secCompteur();
   } // fin de la function finish
 
-
-
-
   counter = 3;
   // decomptes
-  function decomptes(action) 
-  {
-	// if(action = "restart") counter = 3;
-	// else counter--;
-	counter--;
+  function decomptes(action) {
+    // if(action = "restart") counter = 3;
+    // else counter--;
+    counter--;
 
     if (counter == 0) finish();
     else {
@@ -67,7 +63,7 @@ window.onload = function() {
       decompte.classList.add("decompte");
       gameBoard.appendChild(decompte);
       decompte.innerHTML = counter;
-      setTimeout(function() {
+      setTimeout(function () {
         decompte.remove("");
       }, 1000);
     }
@@ -76,16 +72,15 @@ window.onload = function() {
   // l'appel du demarage du compte a rebourd
 
   function start1() {
-	if(intervalId) clearInterval(intervalId);
-	intervalId = setInterval(decomptes, 1000);
-
+    if (intervalId) clearInterval(intervalId);
+    intervalId = setInterval(decomptes, 1000);
   } // fin de la fonction start1
 
-  button.onclick = function() {
+  button.onclick = function () {
     gameBoard.removeChild(fenetre);
     gameBoard.removeChild(consignes);
     //afficher une liste de choix au joueur à selectionné
-    setTimeout(function() {
+    setTimeout(function () {
       let createList = document.createElement("div");
       createList.classList.add("list");
       createList.innerHTML +=
@@ -98,7 +93,7 @@ window.onload = function() {
       let btnCiseau = document.getElementById("btnCiseau");
 
       //donner une action pour chaques boutons
-      btnFeuille.onclick = function() {
+      btnFeuille.onclick = function () {
         let feuille = document.createElement("div");
         feuille.classList.add("feuille");
         feuille.innerHTML = "feuille";
@@ -107,12 +102,11 @@ window.onload = function() {
         gameBoard.appendChild(feuille);
         createList.removeChild(btnPierre);
         createList.removeChild(btnCiseau);
-		feuille.style.left = "20" + "%";
-		console.log(document.getElementById("player1").getAttribute("value"));
-		
+        feuille.style.left = "20" + "%";
+        console.log(document.getElementById("player1").getAttribute("value"));
       };
 
-      btnPierre.onclick = function() {	
+      btnPierre.onclick = function () {
         let pierre = document.createElement("div");
         pierre.classList.add("pierre");
         pierre.innerHTML = "pierre";
@@ -121,11 +115,10 @@ window.onload = function() {
         gameBoard.appendChild(pierre);
         createList.removeChild(btnFeuille);
         createList.removeChild(btnCiseau);
-		pierre.style.left = "20" + "%";
-		console.log(document.getElementById("player1").getAttribute("value"));
-		
+        pierre.style.left = "20" + "%";
+        console.log(document.getElementById("player1").getAttribute("value"));
       };
-      btnCiseau.onclick = function() {
+      btnCiseau.onclick = function () {
         let ciseau = document.createElement("div");
         ciseau.classList.add("ciseau");
         ciseau.innerHTML = "ciseau";
@@ -134,9 +127,8 @@ window.onload = function() {
         gameBoard.appendChild(ciseau);
         createList.removeChild(btnPierre);
         createList.removeChild(btnFeuille);
-		ciseau.style.left = "20" + "%";
-		console.log(document.getElementById("player1").getAttribute("value"));
-		
+        ciseau.style.left = "20" + "%";
+        console.log(document.getElementById("player1").getAttribute("value"));
       };
     }, 4000);
     setTimeout(() => {
@@ -152,8 +144,8 @@ window.onload = function() {
         feuille.setAttribute("value", "feuille");
         feuille.id = "player2";
         feuille.innerHTML = "feuille";
-		gameBoard.appendChild(feuille);
-		console.log(document.getElementById("player2").getAttribute("value"));
+        gameBoard.appendChild(feuille);
+        console.log(document.getElementById("player2").getAttribute("value"));
       }
 
       if (randTab === "pierre") {
@@ -162,8 +154,8 @@ window.onload = function() {
         pierre.setAttribute("value", "pierre");
         pierre.id = "player2";
         pierre.innerHTML = "pierre";
-		gameBoard.appendChild(pierre);
-		console.log(document.getElementById("player2").getAttribute("value"));
+        gameBoard.appendChild(pierre);
+        console.log(document.getElementById("player2").getAttribute("value"));
       }
 
       if (randTab === "ciseau") {
@@ -172,8 +164,8 @@ window.onload = function() {
         ciseau.setAttribute("value", "ciseau");
         ciseau.id = "player2";
         ciseau.innerHTML = "ciseau";
-		gameBoard.appendChild(ciseau);
-		console.log(document.getElementById("player2").getAttribute("value"));
+        gameBoard.appendChild(ciseau);
+        console.log(document.getElementById("player2").getAttribute("value"));
       }
 
       // crées des conditions pour les regles du jeu
@@ -219,10 +211,10 @@ window.onload = function() {
       }
     }, 7000); //donner le resultat apres le delai de tous les compteurs
 
-    start2();
+    start1();
   }; // fin de la fonction button.onclick
 
-  button1.onclick = function() {
+  button1.onclick = function () {
     gameBoard.removeChild(fenetre);
     gameBoard.removeChild(consignes);
     start1();
@@ -234,19 +226,17 @@ function secCompteur() {
   function finish() {
     clearInterval(intervalId);
 
-    console.log("yo");
-
     let buttonAgain = document.createElement("input");
     buttonAgain.setAttribute("type", "button");
     buttonAgain.setAttribute("value", "Next Round?!");
     buttonAgain.classList.add("buttonAgain");
     buttonAgain.id = "buttonAgain";
     gameBoard.appendChild(buttonAgain);
-    buttonAgain.onclick = function() {
+    buttonAgain.onclick = function () {
       //donner les actions pour relancer le game
       gameBoard.removeChild(document.getElementById("player1"));
-	  gameBoard.removeChild(document.getElementById("player2"));
-	  counter = 3;
+      gameBoard.removeChild(document.getElementById("player2"));
+      counter = 3;
       start1();
       console.log(document.getElementById("player1"));
     };
@@ -260,7 +250,7 @@ function secCompteur() {
       decompte.classList.add("decompte");
       gameBoard.appendChild(decompte);
       decompte.innerHTML = counter;
-      setTimeout(function() {
+      setTimeout(function () {
         decompte.remove("");
       }, 1000);
     }
@@ -268,6 +258,9 @@ function secCompteur() {
   function start2() {
     intervalId = setInterval(decomptes, 1000);
   }
-
+  function start1() {
+    if (intervalId) clearInterval(intervalId);
+    intervalId = setInterval(decomptes, 1000);
+  } // fin de la fonction start1
   start1();
 } /*fin de la function secCompteur*/
